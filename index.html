@@ -1,0 +1,1824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dirshak Deepak Patro - Portfolio Resume</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+
+        :root {
+            --bg-primary: #111827;
+            --bg-secondary: #1f2937;
+            --bg-tertiary: #374151;
+            --text-primary: #f9fafb;
+            --text-secondary: #d1d5db;
+            --text-tertiary: #9ca3af;
+            --accent-blue: #3b82f6;
+            --accent-purple: #8b5cf6;
+            --accent-pink: #ec4899;
+            --accent-green: #10b981;
+            --accent-yellow: #f59e0b;
+            --accent-cyan: #06b6d4;
+            --accent-red: #ef4444;
+            --accent-indigo: #6366f1;
+            --border-color: #374151;
+            --shadow-color: rgba(0, 0, 0, 0.3);
+            --transition-speed: 300ms;
+        }
+
+        .light-mode {
+            --bg-primary: #f9fafb;
+            --bg-secondary: #ffffff;
+            --bg-tertiary: #f3f4f6;
+            --text-primary: #111827;
+            --text-secondary: #374151;
+            --text-tertiary: #6b7280;
+            --accent-blue: #2563eb;
+            --accent-purple: #7c3aed;
+            --accent-pink: #db2777;
+            --accent-green: #059669;
+            --accent-yellow: #d97706;
+            --accent-cyan: #0891b2;
+            --accent-red: #dc2626;
+            --accent-indigo: #4f46e5;
+            --border-color: #e5e7eb;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            transition: background-color var(--transition-speed), color var(--transition-speed);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            background-color: rgba(31, 41, 55, 0.95);
+            border-bottom: 1px solid var(--border-color);
+            box-shadow: 0 4px 6px var(--shadow-color);
+            transition: all var(--transition-speed);
+        }
+
+        .light-mode nav {
+            background-color: rgba(255, 255, 255, 0.95);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0.75rem 1rem;
+        }
+
+        .nav-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+        }
+
+        .nav-title {
+            font-size: 1.125rem;
+            font-weight: bold;
+            background: linear-gradient(to right, var(--accent-blue), var(--accent-purple));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            transition: opacity var(--transition-speed);
+        }
+
+        .nav-title.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .nav-controls {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-button {
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            background-color: var(--bg-tertiary);
+            border: none;
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: all var(--transition-speed);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav-button:hover {
+            background-color: var(--bg-secondary);
+        }
+
+        .nav-menu-container {
+            overflow: hidden;
+            transition: all var(--transition-speed);
+        }
+
+        .nav-menu {
+            display: flex;
+            justify-content: center;
+        }
+
+        .nav-menu-inner {
+            display: inline-flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            background-color: rgba(55, 65, 81, 0.8);
+            backdrop-filter: blur(8px);
+        }
+
+        .light-mode .nav-menu-inner {
+            background-color: rgba(243, 244, 246, 0.8);
+        }
+
+        .nav-link {
+            padding: 0.375rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all var(--transition-speed);
+            white-space: nowrap;
+            color: var(--text-secondary);
+        }
+
+        .nav-link:hover {
+            background-color: var(--bg-tertiary);
+            color: var(--text-primary);
+        }
+
+        .nav-link.active {
+            background-color: var(--accent-blue);
+            color: white;
+            box-shadow: 0 4px 6px var(--shadow-color);
+        }
+
+        .light-mode .nav-link.active {
+            background-color: var(--accent-blue);
+        }
+
+        /* Sections */
+        section {
+            padding: 3rem 1rem;
+        }
+
+        @media (min-width: 640px) {
+            section {
+                padding: 4rem 1.5rem;
+            }
+        }
+
+        @media (min-width: 768px) {
+            section {
+                padding: 5rem 1.5rem;
+            }
+        }
+
+        .section-title {
+            font-size: 2.25rem;
+            font-weight: bold;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        @media (min-width: 640px) {
+            .section-title {
+                font-size: 2.5rem;
+                margin-bottom: 3rem;
+            }
+        }
+
+        .card {
+            background-color: var(--bg-secondary);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0 10px 15px var(--shadow-color);
+            transition: all var(--transition-speed);
+        }
+
+        @media (min-width: 640px) {
+            .card {
+                padding: 2rem;
+            }
+        }
+
+        .card:hover {
+            box-shadow: 0 20px 25px var(--shadow-color);
+            transform: translateY(-4px);
+        }
+
+        .accent-text {
+            color: var(--accent-blue);
+        }
+
+        /* Hero Section */
+        #about {
+            padding-top: 12rem;
+            padding-bottom: 3rem;
+        }
+
+        @media (min-width: 640px) {
+            #about {
+                padding-top: 13rem;
+                padding-bottom: 4rem;
+            }
+        }
+
+        @media (min-width: 768px) {
+            #about {
+                padding-top: 14rem;
+            }
+        }
+
+        .hero-title {
+            font-size: 2.25rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, var(--accent-blue), var(--accent-purple), var(--accent-pink));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: gradient 3s ease infinite;
+            background-size: 200% auto;
+        }
+
+        @media (min-width: 640px) {
+            .hero-title {
+                font-size: 3rem;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .hero-title {
+                font-size: 4.5rem;
+            }
+        }
+
+        .hero-subtitle {
+            font-size: 1.125rem;
+            color: var(--text-tertiary);
+            margin-bottom: 1.5rem;
+        }
+
+        @media (min-width: 640px) {
+            .hero-subtitle {
+                font-size: 1.25rem;
+                margin-bottom: 2rem;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .hero-subtitle {
+                font-size: 1.5rem;
+            }
+        }
+
+        .contact-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            background-color: var(--bg-tertiary);
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: all var(--transition-speed);
+            font-size: 0.875rem;
+        }
+
+        .contact-link:hover {
+            background-color: var(--bg-secondary);
+        }
+
+        @media (min-width: 640px) {
+            .contact-link {
+                font-size: 0.875rem;
+            }
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .social-link {
+            padding: 0.625rem;
+            border-radius: 9999px;
+            background-color: var(--bg-tertiary);
+            color: var(--text-primary);
+            transition: all var(--transition-speed);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .social-link:hover {
+            background-color: var(--accent-blue);
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .about-card {
+            text-align: left;
+            margin-top: 2rem;
+        }
+
+        .about-card h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent-blue);
+        }
+
+        @media (min-width: 640px) {
+            .about-card h2 {
+                font-size: 1.75rem;
+                margin-bottom: 1.25rem;
+            }
+        }
+
+        .about-card p {
+            line-height: 1.6;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            font-size: 0.875rem;
+        }
+
+        @media (min-width: 640px) {
+            .about-card p {
+                font-size: 1rem;
+            }
+        }
+
+        /* Education Section */
+        .education-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .education-header {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            gap: 0.5rem;
+        }
+
+        @media (min-width: 640px) {
+            .education-header {
+                flex-direction: row;
+                align-items: flex-start;
+            }
+        }
+
+        .education-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: var(--accent-blue);
+        }
+
+        @media (min-width: 640px) {
+            .education-title {
+                font-size: 1.5rem;
+            }
+        }
+
+        .education-period {
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            background-color: var(--bg-tertiary);
+            font-size: 0.875rem;
+            align-self: flex-start;
+        }
+
+        .education-gpa {
+            font-size: 1.875rem;
+            font-weight: bold;
+            color: var(--accent-green);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            gap: 1rem;
+        }
+
+        @media (min-width: 640px) {
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+        }
+
+        .skill-category h3 {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: var(--accent-blue);
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            background-color: var(--bg-tertiary);
+            font-size: 0.875rem;
+        }
+
+        /* Experience Section */
+        .experience-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .experience-header {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            gap: 0.5rem;
+        }
+
+        @media (min-width: 640px) {
+            .experience-header {
+                flex-direction: row;
+                align-items: flex-start;
+            }
+        }
+
+        .experience-company {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: var(--accent-green);
+        }
+
+        @media (min-width: 640px) {
+            .experience-company {
+                font-size: 1.5rem;
+            }
+        }
+
+        .experience-period {
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            background-color: var(--bg-tertiary);
+            font-size: 0.875rem;
+            align-self: flex-start;
+        }
+
+        .experience-list {
+            list-style-type: none;
+        }
+
+        .experience-list li {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+        }
+
+        .experience-list li::before {
+            content: "▹";
+            color: var(--accent-blue);
+            flex-shrink: 0;
+            margin-top: 0.25rem;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            gap: 1rem;
+        }
+
+        @media (min-width: 640px) {
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+        }
+
+        .project-card h3 {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 0.75rem;
+            color: var(--accent-pink);
+        }
+
+        .project-card p {
+            color: var(--text-tertiary);
+            font-size: 0.875rem;
+        }
+
+        /* Research Section */
+        .research-card h3 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: var(--accent-yellow);
+        }
+
+        @media (min-width: 640px) {
+            .research-card h3 {
+                font-size: 1.75rem;
+            }
+        }
+
+        .research-card p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        /* Poetry Section */
+        .poem-card {
+            margin-bottom: 1.5rem;
+        }
+
+        .poem-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 0.75rem;
+            position: sticky;
+            top: 5rem;
+            z-index: 10;
+            padding-bottom: 0.75rem;
+            background: linear-gradient(to bottom, var(--bg-secondary) 70%, transparent);
+        }
+
+        .poem-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: var(--accent-cyan);
+            margin-bottom: 0.5rem;
+        }
+
+        .poem-description {
+            color: var(--text-tertiary);
+            font-size: 0.875rem;
+        }
+
+        .poem-toggle {
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            background-color: var(--bg-tertiary);
+            border: none;
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: all var(--transition-speed);
+            flex-shrink: 0;
+        }
+
+        .poem-toggle:hover {
+            background-color: var(--bg-secondary);
+        }
+
+        .poem-content {
+            overflow: hidden;
+            transition: all var(--transition-speed);
+            max-height: 0;
+            opacity: 0;
+        }
+
+        .poem-content.expanded {
+            max-height: 500px;
+            opacity: 1;
+        }
+
+        .poem-text {
+            padding: 1rem;
+            border-radius: 0.5rem;
+            background-color: rgba(17, 24, 39, 0.5);
+            border-left: 4px solid var(--accent-cyan);
+            color: var(--text-secondary);
+            line-height: 1.6;
+            font-style: italic;
+            font-size: 0.875rem;
+            overflow-y: auto;
+            max-height: 24rem;
+            white-space: pre-line;
+        }
+
+        .light-mode .poem-text {
+            background-color: rgba(249, 250, 251, 0.5);
+        }
+
+        /* Paintings Section */
+        .paintings-grid {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .paintings-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .paintings-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .painting-card {
+            overflow: hidden;
+        }
+
+        .painting-image {
+            height: 16rem;
+            background-color: var(--bg-tertiary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .painting-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform var(--transition-speed);
+        }
+
+        .painting-card:hover .painting-img {
+            transform: scale(1.05);
+        }
+
+        .painting-info {
+            padding: 1rem;
+        }
+
+        .painting-info h3 {
+            font-size: 1.125rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: var(--accent-purple);
+        }
+
+        .painting-info p {
+            color: var(--text-tertiary);
+            font-size: 0.875rem;
+        }
+
+        /* Awards Section */
+        .awards-grid {
+            display: grid;
+            gap: 1rem;
+        }
+
+        @media (min-width: 768px) {
+            .awards-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+        }
+
+        .award-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            background-color: var(--bg-secondary);
+            box-shadow: 0 4px 6px var(--shadow-color);
+        }
+
+        .award-item span {
+            font-size: 0.875rem;
+        }
+
+        /* Volunteer Section */
+        .volunteer-header {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            gap: 0.5rem;
+        }
+
+        @media (min-width: 640px) {
+            .volunteer-header {
+                flex-direction: row;
+                align-items: flex-start;
+            }
+        }
+
+        .volunteer-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--accent-red);
+        }
+
+        @media (min-width: 640px) {
+            .volunteer-title {
+                font-size: 1.75rem;
+            }
+        }
+
+        .volunteer-period {
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            background-color: var(--bg-tertiary);
+            font-size: 0.875rem;
+            align-self: flex-start;
+        }
+
+        .volunteer-list {
+            list-style-type: none;
+        }
+
+        .volunteer-list li {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+        }
+
+        .volunteer-list li::before {
+            content: "▹";
+            color: var(--accent-red);
+            flex-shrink: 0;
+            margin-top: 0.25rem;
+        }
+
+        /* Leadership Section */
+        .leadership-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .leadership-item h3 {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: var(--accent-indigo);
+        }
+
+        .leadership-item p {
+            color: var(--text-tertiary);
+            margin-bottom: 0.75rem;
+        }
+
+        .leadership-list {
+            list-style-type: none;
+        }
+
+        .leadership-list li {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+        }
+
+        .leadership-list li::before {
+            content: "▹";
+            color: var(--accent-indigo);
+            flex-shrink: 0;
+            margin-top: 0.25rem;
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 1.5rem;
+            border-top: 1px solid var(--border-color);
+            background-color: var(--bg-primary);
+        }
+
+        .footer-content {
+            text-align: center;
+        }
+
+        .footer-content p {
+            color: var(--text-tertiary);
+            margin-bottom: 1rem;
+        }
+
+        .footer-content .copyright {
+            font-size: 0.875rem;
+            color: var(--text-tertiary);
+        }
+
+        /* Loading Screen */
+        .loading-screen {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--bg-primary);
+        }
+
+        .loading-content {
+            text-align: center;
+        }
+
+        .loading-spinner {
+            position: relative;
+            width: 6rem;
+            height: 6rem;
+            margin: 0 auto 2rem;
+        }
+
+        .loading-spinner::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            border: 4px solid var(--accent-blue);
+            border-top-color: transparent;
+            animation: spin 1s linear infinite;
+        }
+
+        .loading-text {
+            font-size: 1.5rem;
+            font-weight: bold;
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+
+        /* Animations */
+        @keyframes gradient {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .animate-fadeIn {
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        /* Utility Classes */
+        .hidden {
+            display: none;
+        }
+
+        .bg-alt {
+            background-color: var(--bg-tertiary);
+        }
+
+        .light-mode .bg-alt {
+            background-color: #f3f4f6;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .items-center {
+            align-items: center;
+        }
+
+        .justify-center {
+            justify-content: center;
+        }
+
+        .justify-between {
+            justify-content: space-between;
+        }
+
+        .flex-col {
+            flex-direction: column;
+        }
+
+        .gap-2 {
+            gap: 0.5rem;
+        }
+
+        .gap-3 {
+            gap: 0.75rem;
+        }
+
+        .gap-4 {
+            gap: 1rem;
+        }
+
+        .mb-2 {
+            margin-bottom: 0.5rem;
+        }
+
+        .mb-3 {
+            margin-bottom: 0.75rem;
+        }
+
+        .mb-4 {
+            margin-bottom: 1rem;
+        }
+
+        .mb-6 {
+            margin-bottom: 1.5rem;
+        }
+
+        .mb-8 {
+            margin-bottom: 2rem;
+        }
+
+        .mt-4 {
+            margin-top: 1rem;
+        }
+
+        .p-4 {
+            padding: 1rem;
+        }
+
+        .p-6 {
+            padding: 1.5rem;
+        }
+
+        .p-8 {
+            padding: 2rem;
+        }
+
+        .rounded-lg {
+            border-radius: 0.5rem;
+        }
+
+        .rounded-xl {
+            border-radius: 0.75rem;
+        }
+
+        .rounded-2xl {
+            border-radius: 1rem;
+        }
+
+        .rounded-full {
+            border-radius: 9999px;
+        }
+
+        .shadow-lg {
+            box-shadow: 0 10px 15px var(--shadow-color);
+        }
+
+        .shadow-xl {
+            box-shadow: 0 20px 25px var(--shadow-color);
+        }
+
+        .transition-all {
+            transition: all var(--transition-speed);
+        }
+
+        .transform {
+            transform: translateY(0);
+        }
+
+        .hover\\:-translate-y-1:hover {
+            transform: translateY(-4px);
+        }
+
+        .rotate-180 {
+            transform: rotate(180deg);
+        }
+
+        .w-5 {
+            width: 1.25rem;
+        }
+
+        .h-5 {
+            height: 1.25rem;
+        }
+
+        .w-8 {
+            width: 2rem;
+        }
+
+        .h-8 {
+            height: 2rem;
+        }
+
+        .w-10 {
+            width: 2.5rem;
+        }
+
+        .h-10 {
+            height: 2.5rem;
+        }
+    </style>
+</head>
+<body class="dark-mode">
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <h2 class="loading-text">Loading Portfolio...</h2>
+        </div>
+    </div>
+
+    <div id="portfolio-content" class="hidden">
+        <!-- Navigation -->
+        <nav id="main-nav">
+            <div class="nav-container">
+                <div class="nav-header">
+                    <h1 id="nav-title" class="nav-title hidden">DIRSHAK DEEPAK PATRO</h1>
+                    <div class="nav-controls">
+                        <button id="nav-toggle" class="nav-button" aria-label="Toggle navigation">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                                <path id="nav-toggle-icon" d="M3 5h14M3 10h14M3 15h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                        <button id="theme-toggle" class="nav-button" aria-label="Toggle dark mode">
+                            <i id="theme-icon" class="fas fa-sun"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Centered oblong navigation container -->
+                <div id="nav-menu-container" class="nav-menu-container">
+                    <div class="nav-menu">
+                        <div id="nav-menu-inner" class="nav-menu-inner">
+                            <a href="#about" class="nav-link active" data-section="about">About</a>
+                            <a href="#education" class="nav-link" data-section="education">Education</a>
+                            <a href="#skills" class="nav-link" data-section="skills">Skills</a>
+                            <a href="#experience" class="nav-link" data-section="experience">Experience</a>
+                            <a href="#projects" class="nav-link" data-section="projects">Projects</a>
+                            <a href="#research" class="nav-link" data-section="research">Research</a>
+                            <a href="#poetry" class="nav-link" data-section="poetry">Poetry</a>
+                            <a href="#paintings" class="nav-link" data-section="paintings">Paintings</a>
+                            <a href="#awards" class="nav-link" data-section="awards">Awards</a>
+                            <a href="#volunteer" class="nav-link" data-section="volunteer">Volunteer</a>
+                            <a href="#leadership" class="nav-link" data-section="leadership">Leadership</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section id="about" class="animate-fadeIn">
+            <div class="container text-center">
+                <div class="mb-6">
+                    <h1 class="hero-title">DIRSHAK DEEPAK PATRO</h1>
+                    <p class="hero-subtitle">AI & Data Science Student | ML Engineer | Full-Stack Developer</p>
+                </div>
+                
+                <div class="contact-links">
+                    <a href="mailto:dirshakpatro@gmail.com" class="contact-link">
+                        <i class="fas fa-envelope"></i>
+                        <span>dirshakpatro@gmail.com</span>
+                    </a>
+                    <a href="tel:+919819879560" class="contact-link">
+                        <i class="fas fa-phone"></i>
+                        <span>+91-9819879560</span>
+                    </a>
+                </div>
+
+                <div class="social-links">
+                    <a href="https://xprilion.com" target="_blank" rel="noopener noreferrer" class="social-link">
+                        <i class="fas fa-globe"></i>
+                    </a>
+                    <a href="https://github.com/dirshak" target="_blank" rel="noopener noreferrer" class="social-link">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/dirshak" target="_blank" rel="noopener noreferrer" class="social-link">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+                
+                <!-- About Me Section -->
+                <div class="about-card card">
+                    <h2>About Me</h2>
+                    <p>
+                        I'm a passionate AI and Data Science student at K.J. Somaiya College of Engineering with a stellar CGPA of 9.935/10.0. 
+                        My journey in technology is driven by curiosity and a desire to create meaningful solutions that bridge innovation with real-world impact.
+                    </p>
+                    <p>
+                        From building network management systems at L&T Technology Services to developing document processing solutions at Containova, 
+                        I've gained hands-on experience in machine learning, computer vision, and full-stack development. My technical expertise spans 
+                        Python, TensorFlow, Flutter, and cloud technologies like Kubernetes and Docker.
+                    </p>
+                    <p>
+                        Beyond code, I'm deeply committed to community service through teaching at U&I Trust, and I actively contribute to my college 
+                        as Joint Literary Secretary. Whether it's debating, public speaking, or creative writing, I believe in the power of words and 
+                        technology to transform lives. Let's connect and create something amazing together!
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="fas fa-graduation-cap" style="color: var(--accent-blue);"></i>
+                    Education
+                </h2>
+                <div class="space-y-6">
+                    <div class="education-item card">
+                        <div class="education-header">
+                            <div class="flex-1">
+                                <h3 class="education-title">K.J. Somaiya College of Engineering</h3>
+                                <p class="text-tertiary">Bachelor of Technology - AI & Data Science</p>
+                            </div>
+                            <span class="education-period">July 2023 - May 2027</span>
+                        </div>
+                        <div class="mb-4">
+                            <span class="education-gpa">CGPA: 9.935/10.0</span>
+                        </div>
+                        <p class="text-tertiary text-sm">
+                            Sem 1: 10.0 | Sem 2: 9.74 | Sem 3: 10.0 | Sem 4: 10.0
+                        </p>
+                        <div class="mt-4">
+                            <p class="text-sm text-tertiary">
+                                <strong>Courses:</strong> Operating Systems, Data Structures, Analysis of Algorithms, AI, ML, Networking, Databases
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="education-item card">
+                        <div class="education-header">
+                            <div>
+                                <h3 class="education-title">Apeejay School, Kharghar</h3>
+                                <p class="text-tertiary">CBSE</p>
+                            </div>
+                            <span class="education-period">2009 - 2023</span>
+                        </div>
+                        <p class="text-tertiary">
+                            Class 12: <strong class="text-green">92.4%</strong> (2023) | Class 10: <strong class="text-green">98%</strong> (2021)
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="bg-alt">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="fas fa-code" style="color: var(--accent-purple);"></i>
+                    Skills
+                </h2>
+                <div class="skills-grid">
+                    <div class="skill-category card">
+                        <h3>Languages</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">C</span>
+                            <span class="skill-tag">Dart (Flutter)</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">SQL</span>
+                            <span class="skill-tag">Bash</span>
+                            <span class="skill-tag">HTML</span>
+                            <span class="skill-tag">CSS</span>
+                        </div>
+                    </div>
+                    <div class="skill-category card">
+                        <h3>Frameworks</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Scikit</span>
+                            <span class="skill-tag">SpaCy</span>
+                            <span class="skill-tag">TensorFlow</span>
+                            <span class="skill-tag">Keras</span>
+                            <span class="skill-tag">Django</span>
+                            <span class="skill-tag">Flask</span>
+                            <span class="skill-tag">Flutter</span>
+                        </div>
+                    </div>
+                    <div class="skill-category card">
+                        <h3>Tools</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Kubernetes</span>
+                            <span class="skill-tag">Docker</span>
+                            <span class="skill-tag">GIT</span>
+                            <span class="skill-tag">PostgreSQL</span>
+                            <span class="skill-tag">MySQL</span>
+                            <span class="skill-tag">SQLite</span>
+                            <span class="skill-tag">MariaDB</span>
+                            <span class="skill-tag">MongoDB</span>
+                            <span class="skill-tag">PowerBI</span>
+                            <span class="skill-tag">QGIS</span>
+                            <span class="skill-tag">Google Earth Engine</span>
+                            <span class="skill-tag">USGS Earth Explorer</span>
+                        </div>
+                    </div>
+                    <div class="skill-category card">
+                        <h3>Soft Skills</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Leadership</span>
+                            <span class="skill-tag">Event Management</span>
+                            <span class="skill-tag">Writing</span>
+                            <span class="skill-tag">Public Speaking</span>
+                            <span class="skill-tag">Time Management</span>
+                            <span class="skill-tag">Debate</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="fas fa-briefcase" style="color: var(--accent-green);"></i>
+                    Experience
+                </h2>
+                <div class="space-y-6">
+                    <div class="experience-item card">
+                        <div class="experience-header">
+                            <div class="flex-1">
+                                <h3 class="experience-company">L&T Technology Services</h3>
+                                <p>Tech Infrastructure Intern</p>
+                                <p class="text-tertiary text-sm">Mumbai, India</p>
+                            </div>
+                            <span class="experience-period">June 2025 - July 2025</span>
+                        </div>
+                        <ul class="experience-list">
+                            <li>Network Management System Development: Built an in-house Network Management System enabling centralized monitoring of infrastructure components</li>
+                            <li>Operational Visibility: Improved fault visibility and response by aggregating network status data into a single monitoring interface</li>
+                            <li>Process Efficiency: Reduced manual tracking effort by automating network status checks through the NMS</li>
+                        </ul>
+                    </div>
+                    <div class="experience-item card">
+                        <div class="experience-header">
+                            <div class="flex-1">
+                                <h3 class="experience-company">Containova Solutions</h3>
+                                <p>Software Development Intern</p>
+                                <p class="text-tertiary text-sm">Navi Mumbai, India</p>
+                            </div>
+                            <span class="experience-period">December 2024 - January 2025</span>
+                        </div>
+                        <ul class="experience-list">
+                            <li>Automated ID extraction: Enabled fast, accurate data capture from Aadhaar, PAN, and driving licenses using computer vision and ML</li>
+                            <li>Production-Ready CV Pipeline: Delivered a full-stack application that operationalized ML models for real-world document processing</li>
+                            <li>Shipping container dataset for identification and tracking: Strengthened detection accuracy of shipping container decals by creating large high-quality labeled datasets</li>
+                        </ul>
+                    </div>
+                    <div class="experience-item card">
+                        <div class="experience-header">
+                            <div class="flex-1">
+                                <h3 class="experience-company">Wagwan World</h3>
+                                <p>Data Science and Business Intern</p>
+                                <p class="text-tertiary text-sm">Remote</p>
+                            </div>
+                            <span class="experience-period">June 2024 - August 2024</span>
+                        </div>
+                        <ul class="experience-list">
+                            <li>SEO & Digital Presence: Enhanced application performance by implementing SEO strategies for individual communities on the social platform, increasing organic traffic and user engagement</li>
+                            <li>Flutter UI/UX Elements: Built and refined interactive UI components in Flutter, improving application usability and visual appeal</li>
+                            <li>Professional B2B Business Decks: Created concise and visually compelling business decks to support decision-making and team alignment</li>
+                        </ul>
+                    </div>
+                    <div class="experience-item card">
+                        <div class="experience-header">
+                            <div class="flex-1">
+                                <h3 class="experience-company">Mahaagromart, Maharashtra Agro Industries Development Corporation</h3>
+                                <p>Project Intern</p>
+                                <p class="text-tertiary text-sm">Mumbai, India</p>
+                            </div>
+                            <span class="experience-period">February 2024 - March 2024</span>
+                        </div>
+                        <ul class="experience-list">
+                            <li>Market Research: Conducted marketing research, benchmarking, and competitive analysis to identify trends, gaps, and opportunities in the agricultural sales marketplace</li>
+                            <li>Business Solutions: Developed commercial business solutions and strategic planning initiatives aligned with farmer and supplier needs</li>
+                            <li>Decision Support: Prepared decision-ready business decks for internal stakeholders, facilitating evidence-based strategy discussions</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="bg-alt">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="fas fa-book-open" style="color: var(--accent-pink);"></i>
+                    Projects
+                </h2>
+                <div class="projects-grid">
+                    <div class="project-card card">
+                        <h3>Routopia</h3>
+                        <p>Routopia is a GIS-driven truck routing and load optimization project that uses machine learning and pathfinding algorithms to enable coordinated load transfers at overlapping waypoint radii. By combining spatial analysis with intelligent route planning, the system improves vehicle and manpower utilization, reduces redundant trips, and optimizes fleet efficiency and logistics operations.</p>
+                    </div>
+                    <div class="project-card card">
+                        <h3>Urban Greenspace Accessibility Analysis: Queens, New York</h3>
+                        <p>Assessed the availability, fragmentation, and accessibility of urban green spaces in Queens, New York, using GIS-based spatial analysis of Landsat 9 satellite imagery and OpenStreetMap (OSM) layers to derive spatial indicators and evaluate patterns of urban greenspace distribution and access.</p>
+                    </div>
+                    <div class="project-card card">
+                        <h3>SoulAce</h3>
+                        <p>Co-developed Soulace, a digital platform providing personalized mental health support through mood tracking, guided interventions, and curated resources. Focused on user-friendly design and data-driven insights to promote proactive emotional well-being and accessible mental wellness.</p>
+                    </div>
+                    <div class="project-card card">
+                        <h3>HHO Enhanced Pneumonia Detection</h3>
+                        <p>Developed an image classification system using feature fusion of pre-trained CNNs (VGG16, VGG19, ResNet50, MobileNet) with SVM and Random Forest classifiers, achieving high accuracy on medical and digit datasets, while exploring feature reduction with Harris Hawks Optimization.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research Section -->
+        <section id="research">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="fas fa-award" style="color: var(--accent-yellow);"></i>
+                    Research
+                </h2>
+                <div class="research-card card">
+                    <h3>Enhancing Ocular Disease Detection: Integrating Squeeze-and-Excitation Networks with Transfer Learning</h3>
+                    <p class="mb-4 text-tertiary">
+                        Presented at 2nd International Conference on Technologies for Energy, Agriculture, and Healthcare (February 2025)
+                    </p>
+                    <p>
+                        Developed an automated ocular disease detection system using deep learning to classify retinal fundus images into cataract, diabetic retinopathy, and glaucoma. 
+                        Implemented transfer learning models such as VGG16 and MobileNetV2 with customized layers, along with image preprocessing and augmentation, to enhance diagnostic accuracy. 
+                        The system was evaluated using standard performance metrics, demonstrating its effectiveness in supporting early diagnosis, reducing ophthalmologist workload, and improving overall healthcare efficiency.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Poetry Section -->
+        <section id="poetry" class="bg-alt">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="fas fa-feather-alt" style="color: var(--accent-cyan);"></i>
+                    Poetry
+                </h2>
+                <div class="space-y-6" id="poems-container">
+                    <!-- Poems will be loaded here dynamically from text files -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Paintings Section -->
+        <section id="paintings">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="fas fa-palette" style="color: var(--accent-purple);"></i>
+                    Paintings & Art
+                </h2>
+                <div class="paintings-grid">
+                    <div class="painting-card card">
+                        <div class="painting-image">
+                            <img src="images/painting1.jpg" alt="Artwork 1" class="painting-img">
+                        </div>
+                        <div class="painting-info">
+                            <h3>Artwork 1</h3>
+                            <p>Description of your first painting</p>
+                        </div>
+                    </div>
+                    <div class="painting-card card">
+                        <div class="painting-image">
+                            <img src="images/painting2.jpg" alt="Artwork 2" class="painting-img">
+                        </div>
+                        <div class="painting-info">
+                            <h3>Artwork 2</h3>
+                            <p>Description of your second painting</p>
+                        </div>
+                    </div>
+                    <div class="painting-card card">
+                        <div class="painting-image">
+                            <img src="images/painting3.jpg" alt="Artwork 3" class="painting-img">
+                        </div>
+                        <div class="painting-info">
+                            <h3>Artwork 3</h3>
+                            <p>Description of your third painting</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Awards Section -->
+        <section id="awards" class="bg-alt">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="fas fa-award" style="color: var(--accent-yellow);"></i>
+                    Honors & Awards
+                </h2>
+                <div class="awards-grid">
+                    <div class="award-item">
+                        <i class="fas fa-award" style="color: var(--accent-yellow);"></i>
+                        <span>Dr. Stya Paul Award for Human Values - 2022-23</span>
+                    </div>
+                    <div class="award-item">
+                        <i class="fas fa-award" style="color: var(--accent-yellow);"></i>
+                        <span>Multistate Best Speaker - BKBPS Debate, 2021</span>
+                    </div>
+                    <div class="award-item">
+                        <i class="fas fa-award" style="color: var(--accent-yellow);"></i>
+                        <span>SpellBee National Champion - 10th Rank, 2020</span>
+                    </div>
+                    <div class="award-item">
+                        <i class="fas fa-award" style="color: var(--accent-yellow);"></i>
+                        <span>SpellBee State Champion - 2nd in Maharashtra, 2019</span>
+                    </div>
+                    <div class="award-item">
+                        <i class="fas fa-award" style="color: var(--accent-yellow);"></i>
+                        <span>Finalist - Times NIE Newsmakers' Meet, 2019-2020</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Volunteer Section -->
+        <section id="volunteer">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="fas fa-heart" style="color: var(--accent-red);"></i>
+                    Volunteering
+                </h2>
+                <div class="card">
+                    <div class="volunteer-header">
+                        <div>
+                            <h3 class="volunteer-title">U&I Trust, Mumbai Chapter, Vision Rescue</h3>
+                            <p>Teacher</p>
+                        </div>
+                        <span class="volunteer-period">August 2024 - March 2025</span>
+                    </div>
+                    <ul class="volunteer-list">
+                        <li>Student Mentorship: Motivated underprivileged students to set academic goals and strive for continued learning beyond the classroom</li>
+                        <li>Lesson Planning: Designed structured lesson plans in mathematics and English tailored to 8th grade learning levels</li>
+                        <li>Life Skills Development: Integrated communication, problem-solving, and confidence-building activities into classroom sessions</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Leadership Section -->
+        <section id="leadership" class="bg-alt">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="fas fa-users" style="color: var(--accent-indigo);"></i>
+                    Leadership & Activities
+                </h2>
+                <div class="space-y-6">
+                    <div class="leadership-item card">
+                        <h3>Joint Literary Secretary and Marketing Executive</h3>
+                        <p class="text-tertiary">Students' Council, K.J. Somaiya College of Engineering | July 2024 - May 2025</p>
+                        <ul class="leadership-list">
+                            <li>Event Leadership: Led event planning, management, and marketing initiatives for college-wide programs</li>
+                            <li>Content Creation: Authored scripts, reports, and creative content for various institutional events</li>
+                        </ul>
+                    </div>
+                    <div class="leadership-item card">
+                        <h3>Public Relations Executive</h3>
+                        <p class="text-tertiary">Somaiya Debating Society, Somaiya Vidyavihar University | July 2023 - December 2024</p>
+                        <ul class="leadership-list">
+                            <li>Event Management: Managed event planning, public relations, and hosted debate competitions</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="container text-center">
+                <p class="mb-4">
+                    <strong>Languages:</strong> English (Fluent) | Hindi (Fluent) | Odia (Native) | Marathi (Basic)
+                </p>
+                <p class="mb-4">
+                    <strong>Interests:</strong> Event Planning & Hosting | Video Editing & Documentary Making | Debate & Public Speaking | Journalism & Creative Writing
+                </p>
+                <p class="copyright">
+                    © 2025 Dirshak Deepak Patro. All rights reserved.
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+        
+        // State variables
+        let darkMode = true;
+        let navExpanded = true;
+        let activeSection = 'about';
+        let expandedPoem = null;
+        let navHeight = 0;
+
+        // DOM elements
+        const loadingScreen = document.getElementById('loading-screen');
+        const portfolioContent = document.getElementById('portfolio-content');
+        const navTitle = document.getElementById('nav-title');
+        const navToggle = document.getElementById('nav-toggle');
+        const navToggleIcon = document.getElementById('nav-toggle-icon');
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        const navMenuContainer = document.getElementById('nav-menu-container');
+        const navMenuInner = document.getElementById('nav-menu-inner');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const body = document.body;
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            // Simulate loading
+            setTimeout(() => {
+                loadingScreen.style.display = 'none';
+                portfolioContent.classList.remove('hidden');
+                updateNavHeight();
+                initScrollHandler();
+                loadPoems(); // Load poems from text files
+                initEventListeners();
+            }, 2000);
+
+            // Set initial theme
+            updateTheme();
+        });
+
+        // Load poems from text files
+        async function loadPoems() {
+            const poemsContainer = document.getElementById('poems-container');
+            if (!poemsContainer) return;
+            
+            const poems = [
+                { 
+                    file: 'poems/poem1.txt', 
+                    title: 'Sample Poem Title', 
+                    description: 'A brief description of what this poem is about and its theme.' 
+                },
+                { 
+                    file: 'poems/poem2.txt', 
+                    title: 'Another Poem', 
+                    description: 'A poignant reflection on life, love, and everything in between.' 
+                }
+            ];
+            
+            for (let i = 0; i < poems.length; i++) {
+                try {
+                    const response = await fetch(poems[i].file);
+                    if (!response.ok) {
+                        throw new Error(`Failed to load ${poems[i].file}: ${response.status}`);
+                    }
+                    const content = await response.text();
+                    
+                    const poemCard = document.createElement('div');
+                    poemCard.className = 'poem-card card';
+                    poemCard.innerHTML = `
+                        <div class="poem-header">
+                            <div class="flex-1">
+                                <h3 class="poem-title">${poems[i].title}</h3>
+                                <p class="poem-description">${poems[i].description}</p>
+                            </div>
+                            <button class="poem-toggle" data-poem-index="${i}" aria-label="Expand poem">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="6 9 12 15 18 9" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div id="poem-content-${i}" class="poem-content">
+                            <div class="poem-text">
+                                ${content}
+                            </div>
+                        </div>
+                    `;
+                    
+                    poemsContainer.appendChild(poemCard);
+                } catch (error) {
+                    console.error(`Failed to load poem: ${poems[i].file}`, error);
+                    
+                    // Fallback to hardcoded poem
+                    const poemCard = document.createElement('div');
+                    poemCard.className = 'poem-card card';
+                    poemCard.innerHTML = `
+                        <div class="poem-header">
+                            <div class="flex-1">
+                                <h3 class="poem-title">${poems[i].title}</h3>
+                                <p class="poem-description">${poems[i].description}</p>
+                            </div>
+                            <button class="poem-toggle" data-poem-index="${i}" aria-label="Expand poem">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="6 9 12 15 18 9" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div id="poem-content-${i}" class="poem-content">
+                            <div class="poem-text">
+                                ${poems[i].title}
+
+                                This is a sample poem that would be loaded from ${poems[i].file}.
+                                If you're seeing this, the poem file couldn't be loaded.
+                                
+                                Make sure you have created the 'poems' folder with the text files.
+                            </div>
+                        </div>
+                    `;
+                    
+                    poemsContainer.appendChild(poemCard);
+                }
+            }
+            
+            // Re-attach event listeners to new poem toggles
+            setTimeout(() => {
+                const newPoemToggles = document.querySelectorAll('.poem-toggle');
+                newPoemToggles.forEach(toggle => {
+                    toggle.addEventListener('click', () => {
+                        const index = parseInt(toggle.getAttribute('data-poem-index'));
+                        togglePoem(index);
+                    });
+                });
+            }, 100);
+        }
+
+        // Update theme
+        function updateTheme() {
+            if (darkMode) {
+                body.classList.remove('light-mode');
+                body.classList.add('dark-mode');
+                themeIcon.className = 'fas fa-sun';
+            } else {
+                body.classList.remove('dark-mode');
+                body.classList.add('light-mode');
+                themeIcon.className = 'fas fa-moon';
+            }
+        }
+
+        // Update nav height
+        function updateNavHeight() {
+            const nav = document.getElementById('main-nav');
+            if (nav) {
+                navHeight = nav.offsetHeight;
+            }
+        }
+
+        // Scroll to section
+        function scrollToSection(id) {
+            const element = document.getElementById(id);
+            if (element) {
+                const offset = navHeight + 20;
+                const elementPosition = element.offsetTop - offset;
+                window.scrollTo({
+                    top: elementPosition,
+                    behavior: 'smooth'
+                });
+            }
+        }
+
+        // Update active section based on scroll
+        function updateActiveSection() {
+            const sections = ['about', 'education', 'skills', 'experience', 'projects', 'research', 'poetry', 'paintings', 'awards', 'volunteer', 'leadership'];
+            const scrollPosition = window.scrollY + navHeight + 100;
+            
+            // Update nav title visibility
+            const aboutSection = document.getElementById('about');
+            if (aboutSection) {
+                const aboutBottom = aboutSection.offsetTop + aboutSection.offsetHeight;
+                if (scrollPosition > aboutBottom - 80) {
+                    navTitle.classList.remove('hidden');
+                } else {
+                    navTitle.classList.add('hidden');
+                }
+            }
+            
+            // Find active section
+            let currentSection = 'about';
+            for (const section of sections) {
+                const element = document.getElementById(section);
+                if (element) {
+                    const elementTop = element.offsetTop;
+                    const elementBottom = elementTop + element.offsetHeight;
+                    
+                    if (scrollPosition >= elementTop && scrollPosition < elementBottom) {
+                        currentSection = section;
+                        break;
+                    }
+                }
+            }
+            
+            if (currentSection !== activeSection) {
+                activeSection = currentSection;
+                updateActiveNavLink();
+            }
+        }
+
+        // Update active nav link
+        function updateActiveNavLink() {
+            navLinks.forEach(link => {
+                const section = link.getAttribute('data-section');
+                if (section === activeSection) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        }
+
+        // Toggle poem expansion
+        function togglePoem(index) {
+            const poemContent = document.getElementById(`poem-content-${index}`);
+            const toggleButton = document.querySelector(`.poem-toggle[data-poem-index="${index}"]`);
+            const icon = toggleButton.querySelector('svg');
+            
+            if (expandedPoem === index) {
+                // Collapse
+                poemContent.classList.remove('expanded');
+                icon.style.transform = 'rotate(0deg)';
+                expandedPoem = null;
+            } else {
+                // Expand
+                if (expandedPoem !== null) {
+                    const prevContent = document.getElementById(`poem-content-${expandedPoem}`);
+                    const prevButton = document.querySelector(`.poem-toggle[data-poem-index="${expandedPoem}"]`);
+                    const prevIcon = prevButton.querySelector('svg');
+                    prevContent.classList.remove('expanded');
+                    prevIcon.style.transform = 'rotate(0deg)';
+                }
+                
+                poemContent.classList.add('expanded');
+                icon.style.transform = 'rotate(180deg)';
+                expandedPoem = index;
+            }
+        }
+
+        // Initialize scroll handler
+        function initScrollHandler() {
+            window.addEventListener('scroll', updateActiveSection);
+            updateActiveSection(); // Initial call
+        }
+
+        // Initialize event listeners
+        function initEventListeners() {
+            // Theme toggle
+            themeToggle.addEventListener('click', () => {
+                darkMode = !darkMode;
+                updateTheme();
+            });
+
+            // Nav toggle
+            navToggle.addEventListener('click', () => {
+                navExpanded = !navExpanded;
+                if (navExpanded) {
+                    navMenuContainer.style.maxHeight = '8rem';
+                    navMenuContainer.style.opacity = '1';
+                    navToggleIcon.setAttribute('d', 'M3 5h14M3 10h14M3 15h14');
+                } else {
+                    navMenuContainer.style.maxHeight = '0';
+                    navMenuContainer.style.opacity = '0';
+                    navToggleIcon.setAttribute('d', 'M5 3l10 7-10 7V3z');
+                }
+                setTimeout(updateNavHeight, 300);
+            });
+
+            // Nav link clicks
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const section = link.getAttribute('data-section');
+                    scrollToSection(section);
+                });
+            });
+
+            // Window resize
+            window.addEventListener('resize', updateNavHeight);
+        }
+    </script>
+</body>
+</html>
